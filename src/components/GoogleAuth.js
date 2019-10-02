@@ -12,7 +12,6 @@ export class GoogleAuth extends Component {
           scope: 'email'
         })
         .then(() => {
-          console.log(this);
           this.auth = window.gapi.auth2.getAuthInstance();
           this.onAuthChange(this.auth.isSignedIn.get());
           this.auth.isSignedIn.listen(this.onAuthChange);
